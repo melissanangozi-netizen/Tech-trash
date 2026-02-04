@@ -1,0 +1,17 @@
+from gpiozero import Servo
+from time import sleep
+
+# Connect servo to GPIO 17
+servo = Servo(17)
+
+# Open lid (approx 90 degrees)
+servo.value = 0.5  # Servo value range: -1 (0°) to +1 (180°)
+sleep(2)
+
+# Close lid
+servo.value = -0.5
+sleep(2)
+
+# Return to middle position
+servo.value = 0
+sleep(2)
